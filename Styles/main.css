@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('MontserratMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('Raleway-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .navbar{
+        padding: 30px 10px;
+        position: sticky;
+        top: 20px;
+        z-index: 1000;
+        box-shadow: 0 30px 30px rgba(0, 0, 0, 0.432);
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 20px;
+    
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    
+        border: 1.5px solid rgba(83, 83, 83, 0.511);
+    }
+
+    .navbar a {
+        font-size: 4px;
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/8324.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(104, 104, 104, 0.23);
+    padding: 18px 20px;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.432);
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1.5px solid rgba(83, 83, 83, 0.511);
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.chatscriptsplaybutton {
+    background-color: rgb(102, 255, 0);
+    border: 3px solid rgb(102, 255, 0);
+    border-radius: 20px;
+    padding: 10px 50px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: xx-large;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    transition: all 0.3s ease;
+}
+
+.chatscriptsplaybutton:hover {
+    background-color: rgba(77, 192, 0, 0.482);
+    padding: 15px 60px;
+    font-size: xx-large;
+}
+
+.nav-link:hover {
+    color: #00bfff;
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+.home-title {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 66px;
+    font-weight: bold;
+}
+
+.chat-scripts-title {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: lighter;
+    margin-right:30%;
+    color: #cccccc;
+}
+
+.chat-scripts-desc {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #222;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 355px;
+}
+
+main {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    padding: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
