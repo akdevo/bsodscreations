@@ -115,7 +115,7 @@ button {
 
 button:hover {
     background-color: rgb(31, 31, 31); /* Make background transparent to show the gradient */
-    transform: scale(1.25); /* Slightly enlarge the button */
+    /*transform: scale(1.25); /* Slightly enlarge the button */
     animation: rainbow-border 2.75s linear infinite; /* Animate rainbow effect */
 }
 
@@ -175,7 +175,7 @@ button:hover {
 
 
 button:active {
-    transform: scale(0.85); /* Shrink slightly when clicked */
+    /* transform: scale(0.85); /* Shrink slightly when clicked */
     background-color: black;
     -webkit-text-fill-color: rgb(214, 214, 214);
 }
