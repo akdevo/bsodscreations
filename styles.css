@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'Troika';
+    src: url('Troika.otf') format('opentype'); /* Load .otf file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: 'Troika', Arial, sans-serif; /* Use Troika */
+}
+
+.navbar {
+    position: fixed;  /* Fix navbar to the top */
+    top: 10px;  /* Distance from the top */
+    left: 50%;  /* Center it horizontally */
+    transform: translateX(-50%);  /* Offset to keep it centered */
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    width: 400px;  /* Adjust based on your preference */
+    padding: 10px 20px;
+    
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    border-radius: 15px;
+    border: 3px solid gray;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px); /* Adds blur effect */
+    
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+
+.nav-link {
+    text-decoration: none;
+    font-family: 'Troika', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: gray;
+}
+
+/* User icon (circle) */
+.user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+.frame, .frame1 {
+    text-align: center;
+    padding: 20px;
+    width: 400px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    background: url('example_icons.png') no-repeat center center;
+    background-size: cover; /* Ensures the image fully covers the frame */
+    border: 3px solid transparent;
+    border-radius: 15px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: rainbow-border 2s ease-out infinite;
+    margin-right: 40px; /* Adds space between frames */
+}
+
+.frame1 {
+    margin-left: 20px; /* Additional spacing for .frame1 */
+    background: url('exampleScripting.png') no-repeat center center;
+}
+
+
+h1, p {
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    padding: 10px;
+    border-radius: 5px;
+    backdrop-filter: blur(3px); /* Apply blur effect */
+    -webkit-backdrop-filter: blur(3px); /* Safari support */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+}
+
+
+button {
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Set border to transparent initially */
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Troika', Arial, sans-serif;
+    transition: transform 0.3s ease, background-color 0.5s ease; /* Smooth transition for scale and color */
+    transform-origin: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+button:hover {
+    background-color: rgb(31, 31, 31); /* Make background transparent to show the gradient */
+    transform: scale(1.25); /* Slightly enlarge the button */
+    animation: rainbow-border 2.75s linear infinite; /* Animate rainbow effect */
+}
+
+@keyframes rainbow-border {
+    0% {
+        border-color: red;
+    }
+    14% {
+        border-color: orange;
+    }
+    28% {
+        border-color: yellow;
+    }
+    42% {
+        border-color: green;
+    }
+    57% {
+        border-color: blue;
+    }
+    71% {
+        border-color: indigo;
+    }
+    85% {
+        border-color: violet;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+@keyframes rainbow-bg {
+    0% {
+        background-color: red;
+    }
+    14% {
+        background-color: orange;
+    }
+    28% {
+        background-color: yellow;
+    }
+    42% {
+        background-color: green;
+    }
+    57% {
+        background-color: blue;
+    }
+    71% {
+        background-color: indigo;
+    }
+    85% {
+        background-color: violet;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+
+button:active {
+    transform: scale(0.85); /* Shrink slightly when clicked */
+    background-color: black;
+    -webkit-text-fill-color: rgb(214, 214, 214);
+}
