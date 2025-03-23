@@ -44,116 +44,26 @@ function exploreMore() {
     // You can change this to navigate to another page
 }
 
-const express = require("express");
-const cookieParser = require("cookie-parser");
-const crypto = require("crypto");
-const axios = require("axios");
-const URLSearchParams = require("url").URLSearchParams; // For URL-encoded requests
-
-const app = express();
-app.use(cookieParser());
-
-const CLIENT_ID = "5965494195376135434"; // Replace with your actual Roblox App ID
-const CLIENT_SECRET = "RBX-fQg3rLWj8E6MsaB6m7-6FSWrkmdyuvb4fsev65BAsgmmyLQH_mI95NUc2JPYjOe9"; // Replace with your Roblox secret
-const REDIRECT_URI = "https://akdevo.github.io/bsodscreations/main.html/auth/callback/redirect"; // Your callback URL
-
-// Function to generate a random code_verifier
-function generateCodeVerifier() {
-    const buffer = crypto.randomBytes(32);
-    return buffer.toString("base64url"); // Base64 URL-safe encoding
-}
-
-// Function to generate code_challenge from the code_verifier
-function generateCodeChallenge(codeVerifier) {
-    return new Promise((resolve, reject) => {
-        const hash = crypto.createHash("sha256").update(codeVerifier).digest();
-        const base64Url = hash.toString("base64")
-            .replace(/\+/g, "-")
-            .replace(/\//g, "_")
-            .replace(/=+$/, "");
-        resolve(base64Url);
-    });
-}
-
-// Store the code_verifier temporarily in a session or variable for later use
-let storedCodeVerifier = null;
-
-// Redirect to Roblox authentication page
-app.get("/auth/roblox", async (req, res) => {
-    // Generate a code_verifier and code_challenge
-    const codeVerifier = generateCodeVerifier();
-    storedCodeVerifier = codeVerifier; // Store code_verifier for later use
-
-    const codeChallenge = await generateCodeChallenge(codeVerifier);
-
-    // Build the authentication URL
-    const authUrl = `https://authorize.roblox.com/?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}&scope=openid+profile&state=abc123&code_challenge=${codeChallenge}&code_challenge_method=S256&step=accountConfirm`;
-
-    // Redirect to Roblox authentication page
-    res.redirect(authUrl);
-});
-
-// Handle callback after authentication
-app.get("/auth/callback/redirect", async (req, res) => {
-    const { code, state } = req.query;
-
-    if (!code) {
-        return res.status(400).send("Authentication failed.");
-    }
-
-    // Validate state parameter
-    if (state !== "abc123") {
-        return res.status(400).send("Invalid state parameter.");
-    }
+document.addEventListener("DOMContentLoaded", async () => {
+    const loginButton = document.getElementById("login-button");
 
     try {
-        // Make sure the code_verifier is available
-        if (!storedCodeVerifier) {
-            return res.status(500).send("Code verifier missing.");
+        const response = await fetch("https://bsodscreationsapis.onrender.com/profile", {
+            credentials: "include", // Ensures cookies are sent with the request
+        });
+
+        const data = await response.json();
+
+        if (data.authenticated) {
+            loginButton.textContent = data.username;
+            loginButton.removeAttribute("href");
+            loginButton.style.cursor = "default";
+        } else {
+            loginButton.addEventListener("click", () => {
+                window.location.href = "https://bsodscreationsapis.onrender.com/auth/roblox";
+            });
         }
-
-        // Send a POST request to exchange the authorization code for an access token
-        const response = await axios.post("https://apis.roblox.com/oauth/v1/token", new URLSearchParams({
-            client_id: CLIENT_ID,
-            client_secret: CLIENT_SECRET,
-            code,
-            grant_type: "authorization_code",
-            redirect_uri: REDIRECT_URI,
-            code_verifier: storedCodeVerifier, // Include the code_verifier
-        }).toString(), {
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        });
-
-        const accessToken = response.data.access_token;
-
-        // Generate a session token
-        const sessionToken = crypto.randomBytes(128).toString("hex");
-
-        // Set the session cookie
-        res.cookie("session", sessionToken, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === "production", // Set to true in production
-            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-        });
-
-        // Respond with a success message
-        res.send("Login successful! You can now access the site.");
     } catch (error) {
-        console.error(error.response ? error.response.data : error.message);
-        res.status(500).send("Authentication error.");
+        console.error("Error checking authentication:", error);
     }
-});
-
-// Profile page (for testing purposes)
-app.get("/profile", (req, res) => {
-    const session = req.cookies.session;
-    if (!session) {
-        return res.status(401).send("Not logged in.");
-    }
-    res.send(`Logged in with session: ${session}`);
-});
-
-// Start the Express server
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
 });
