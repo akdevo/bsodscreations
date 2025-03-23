@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Troika';
-    src: url('Troika.otf') format('opentype'); /* Load .otf file */
+    src: url('troika.otf') format('opentype'); /* Load .otf file */
     font-weight: normal;
     font-style: normal;
 }
