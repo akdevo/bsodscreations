@@ -36,7 +36,7 @@ frame1.addEventListener("mouseleave", () => {
 });
 
 document.getElementById("login-button").addEventListener("click", () => {
-    window.location.href = "https://akdevo.github.io/bsodscreations/main.html/auth/roblox"; // Redirect to your authentication API
+    window.location.href = "https://bsodscreationsapis.onrender.com/auth/roblox"; // Redirect to your authentication API
 });
 
 function exploreMore() {
