@@ -1,55 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bsod's Games</title>
-    <link rel="icon" href="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-CCF11C879B627C59F91F2D516C2B2202-Png/150/150/AvatarHeadshot/Webp/noFilter" type="image/webp">
-    <link rel="stylesheet" href="Styles/main.css"> <!-- External CSS -->
+    <title>Bsod's Creations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>   
 </head>
-
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar" aria-label="Main Navigation">
+    <nav class="navbar">
         <a href="#home" class="nav-link">Home</a>
-        <a href="#games" class="nav-link">Games</a>
-        <a href="#contact" class="nav-link">Contact</a>
-    </nav>
+        <a href="#about" class="nav-link">About me</a>
+        <div class="user-icon"></div>
+        <a href="#" class="nav-link" id="login-button">Login</a>
+    </nav> 
 
-    
-    <!-- Page Content -->
-    <header>
-        <h1 class="home-title">Home Page</h1>
-    </header>
+    <div class="frame" id="frame">
+        <h1>Vectors</h1>
+        <p>Explore my pack of vector icons!</p>
+        <button onclick="exploreMore()" href="vectorsDetails.html">See Details</button>
+    </div>
 
-    <!-- Main Content -->
-    <main id="home">
-        <section>
-            <h1>Welcome to Bsod's Games! Explore our collection of exciting games and more.</h1>
-        </section>
-    </main>
-
-    <h2 class="chat-scripts-title">Chat Scripts (ALPHA)</h2>
-    <h3 class="chat-scripts-desc">Welcome to Chat Scripts Game! You can execute a lua code in this game by typing in the chat !run (your command). Wish you good luck in this game!</h3>
-
-    <button id="ChatScriptsPlayButton" class="chatscriptsplaybutton">Play!</button>
-
-    <script>
-        document.getElementById('ChatScriptsPlayButton').addEventListener('click', () => {
-          const placeId = 82289532929502;
-          window.location.href = `roblox://placeID=${placeId}`;
-        });
-    </script>
-
-    <!-- Footer -->
-    <footer>
-        <p>Bsod's Games, 2025</p>
-    </footer>
-
-    <!-- External JavaScript -->
-    <!-- <script src="main.js"></script> -->
+    <div class="frame1" id="frame1">
+        <h1>Scripting</h1>
+        <p>See Scripting things i guess</p>
+        <button onclick="exploreMore()" href="vectorsDetails.html">See Details</button>
+    </div>
 </body>
-
 </html>
+
