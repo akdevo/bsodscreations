@@ -46,6 +46,7 @@ function exploreMore() {
 
 document.addEventListener("DOMContentLoaded", async () => {
     const loginButton = document.getElementById("login-button");
+    const userIcon = document.querySelector(".user-icon");
 
     try {
         const response = await fetch("https://bsodscreationsapis.onrender.com/profile", {
@@ -58,6 +59,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             loginButton.textContent = data.username;
             loginButton.removeAttribute("href");
             loginButton.style.cursor = "default";
+
+            // Fetch user's avatar URL
+            const avatarResponse = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${data.userId}&size=150x150&format=Png`);
+            const avatarData = await avatarResponse.json();
+
+            if (avatarData.data && avatarData.data.length > 0) {
+                const avatarUrl = avatarData.data[0].imageUrl;
+                userIcon.style.backgroundImage = `url(${avatarUrl})`;
+                userIcon.style.backgroundSize = "cover";
+                userIcon.style.backgroundPosition = "center";
+                userIcon.style.borderRadius = "50%"; // Make it circular
+            }
         } else {
             loginButton.addEventListener("click", () => {
                 window.location.href = "https://bsodscreationsapis.onrender.com/auth/roblox";
