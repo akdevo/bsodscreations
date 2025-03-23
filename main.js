@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const data = await response.json();
 
         if (data.authenticated) {
-            loginButton.textContent = 'Logged In XD: 'data.username;
+            loginButton.textContent = 'Logged In XD: ' + data.username;
             loginButton.removeAttribute("href");
             loginButton.style.cursor = "default";
 
