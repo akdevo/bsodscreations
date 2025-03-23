@@ -78,6 +78,7 @@ body {
     justify-content: center;
     align-items: center;
     animation: rainbow-border 2s ease-out infinite;
+    animation: rainbow-shadow 2.75s linear infinite;
     margin-right: 40px; /* Adds space between frames */
 }
 
@@ -147,7 +148,7 @@ button:hover {
 
 @keyframes rainbow-bg {
     0% {
-        background-color: red;
+        box-shadow: red;
     }
     14% {
         background-color: orange;
@@ -169,6 +170,60 @@ button:hover {
     }
     100% {
         background-color: red;
+    }
+}
+
+@keyframes rainbow-border {
+    0% {
+        border-color: red;
+    }
+    14% {
+        border-color: orange;
+    }
+    28% {
+        border-color: yellow;
+    }
+    42% {
+        border-color: green;
+    }
+    57% {
+        border-color: blue;
+    }
+    71% {
+        border-color: indigo;
+    }
+    85% {
+        border-color: violet;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+@keyframes rainbow-shadow {
+    0% {
+        box-shadow: 5px 5px 30px rgba(255, 0, 0, 0.3);
+    }
+    14% {
+        box-shadow: 5px 5px 30px rgba(255, 140, 0, 0.3);
+    }
+    28% {
+        box-shadow: 5px 5px 30px rgba(255, 208, 0, 0.3);
+    }
+    42% {
+        box-shadow: 5px 5px 30px rgba(98, 255, 0, 0.3);
+    }
+    57% {
+        box-shadow: 5px 5px 30px rgba(0, 128, 255, 0.3);
+    }
+    71% {
+        box-shadow: 5px 5px 30px rgba(75, 0, 130, 0.3);
+    }
+    85% {
+        box-shadow: 5px 5px 30px rgba(143, 0, 255, 0.3);
+    }
+    100% {
+        box-shadow: 5px 5px 30px rgba(255, 0, 0, 0.3);
     }
 }
 
