@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             loginButton.style.cursor = "default";
 
             // Fetch user's avatar URL
-            const avatarResponse = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${data.userId}&size=150x150&format=Png`);
+            const avatarResponse = await fetch(`https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=${data.userId}&size=150x150&format=Png`);
             const avatarData = await avatarResponse.json();
 
             if (avatarData.data && avatarData.data.length > 0) {
