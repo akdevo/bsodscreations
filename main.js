@@ -40,9 +40,9 @@ document.getElementById("login-button").addEventListener("click", () => {
 });
 
 function exploreMore() {
-    alert('Exploring more!');
-    // You can change this to navigate to another page
+    window.location.href = "vectorsDetails.html";
 }
+
 
 document.addEventListener("DOMContentLoaded", async () => {
     const loginButton = document.getElementById("login-button");
