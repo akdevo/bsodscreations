@@ -29,7 +29,7 @@ body {
     width: 400px;
     padding: 10px 20px;
     
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(35, 35, 35, 0.6);
     border-radius: 15px;
     border: 3px solid gray;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
@@ -44,7 +44,7 @@ body {
     font-family: 'Troika', Arial, sans-serif;
     font-weight: bold;
     font-size: 16px;
-    color: black;
+    color: white;
     transition: color 0.3s ease-in-out;
 }
 
