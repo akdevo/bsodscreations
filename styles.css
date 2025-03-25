@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Troika';
-    src: url('troika.otf') format('opentype'); /* Load .otf file */
+    src: url('troika.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -10,29 +10,30 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #121212;
     margin: 0;
-    font-family: 'Troika', Arial, sans-serif; /* Use Troika */
+    font-family: 'Troika', Arial, sans-serif;
+    
 }
 
 .navbar {
-    position: fixed;  /* Fix navbar to the top */
-    top: 10px;  /* Distance from the top */
-    left: 50%;  /* Center it horizontally */
-    transform: translateX(-50%);  /* Offset to keep it centered */
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     
     display: flex;
     justify-content: space-around;
     align-items: center;
     
-    width: 400px;  /* Adjust based on your preference */
+    width: 400px;
     padding: 10px 20px;
     
-    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white */
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 15px;
     border: 3px solid gray;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px); /* Adds blur effect */
+    backdrop-filter: blur(5px);
     
     z-index: 1000; /* Ensure it stays above other content */
 }
