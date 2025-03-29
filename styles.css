@@ -101,6 +101,7 @@ h1, p {
     backdrop-filter: blur(3px); /* Apply blur effect */
     -webkit-backdrop-filter: blur(3px); /* Safari support */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+    color: white;
 }
 
 
