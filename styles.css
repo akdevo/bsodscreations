@@ -88,6 +88,10 @@ body {
     background: url('exampleScripting.png') no-repeat center center;
 }
 
+.white-text {
+    color: white;
+}
+
 
 h1, p {
     margin-bottom: 10px;
